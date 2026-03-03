@@ -4,15 +4,12 @@ Native iOS app (SwiftUI) for requesting and managing employment certificates. Bu
 
 ## API key
 
-The app calls Zalex REST APIs that require a subscription key. **Do not hardcode the key** in source.
+The app calls Zalex REST APIs that require a subscription key.
 
-- **Option A — Environment variable (recommended for local runs)**  
+- **Environment variable**  
   Set `ZALEX_API_KEY` before launching the app, e.g. in Xcode scheme:
   - Edit Scheme → Run → Arguments → Environment Variables.
   - Add: `ZALEX_API_KEY` = `<your subscription key>`.
-
-- **Option B — Xcode scheme only**  
-  Same as above; the key is not stored in the repo.
 
 The key is read in `APIConfiguration.apiKey` from `ProcessInfo.processInfo.environment["ZALEX_API_KEY"]` and appended as the `subscription-key` query parameter to request-certificate and request-list endpoints.
 
